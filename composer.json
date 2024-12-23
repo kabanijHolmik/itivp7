@@ -1,0 +1,25 @@
+{
+    "name": "kosen/itivp7",
+    "description": "lab 7 for itivp",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kosen\\Itivp7\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kabanijHolmik",
+            "email": "kosenkov809@gmail.com"
+        }
+    ],
+    "require": {
+        "react/event-loop": "^1.5",
+        "react/promise": "^3.2",
+        "react/promise-timer": "^1.11",
+        "amphp/amp": "3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    }
+}

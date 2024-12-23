@@ -1,0 +1,136 @@
+// === Переменные ===
+$primary-color: #000; // Основной цвет (черный)
+$secondary-color: #fff; // Второстепенный цвет (белый)
+$accent-color: #007BFF; // Акцентный цвет (синий)
+$border-color: #ccc; // Цвет границ (светло-серый)
+$font-family: 'Arial', sans-serif; // Базовый шрифт
+
+// === Сброс стилей ===
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $secondary-color; // Белый фон
+  color: $primary-color; // Черный текст
+  line-height: 1.6;
+}
+
+// === Заголовок ===
+.header {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 20px 0;
+
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+
+// === Основной контент ===
+.main {
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: $secondary-color;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// === Форма ===
+.delivery-form {
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $accent-color;
+        outline: none;
+      }
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: $accent-color;
+    color: $secondary-color;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+}
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center; // Выравнивание флажка и подписи по центру
+  gap: 10px; // Расстояние между флажком и подписью
+
+  input[type="checkbox"] {
+    width: auto; // Убираем растяжение флажка
+    margin: 0; // Убираем стандартные отступы
+  }
+
+  label {
+    font-weight: normal; // Подпись не должна быть жирной
+    margin: 0;
+    cursor: pointer; // Указываем, что можно кликать по подписи
+  }
+}
+
+// === Результат ===
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: $primary-color;
+}
+
+// === Футер ===
+.footer {
+  background-color: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+
+  p {
+    margin: 0;
+  }
+}
