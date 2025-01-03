@@ -38,8 +38,8 @@ $weight = 10;
 $size = 5;
 $isFragile = true;
 $needsInspection = false;
-$fromPoint = 'г. Минск, ул. Монтажников, 2 (м-н "Евроопт")';
-$toPoint = 'г. Слоним, ул. Ершова, 58 (м-н "Евроопт")';
+$fromPoint = 'Сурганова д.54';
+$toPoint = 'Якуба Коласа д.54';
 
 $cost = profileCalculations($weight, $size, $isFragile, $needsInspection, $fromPoint, $toPoint);
 echo "Delivery cost: " . $cost;

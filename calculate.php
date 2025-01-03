@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//require_once $_SERVER['DOCUMENT_ROOT'] . "/itivp7/DeliveryCalculator.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/itivp7/DeliveryCalculator.php";
 require_once __DIR__ . "/ReactiveDeliveryCalculator.php";
 require_once __DIR__ . "/queries.php";
 require 'vendor/autoload.php';
@@ -83,7 +83,7 @@ try {
     // $syncDuration = $syncEnd - $syncStart;
 
     // *** Асинхронный подход (ReactPHP) ***
-    //$reactStart = microtime(true); // Начало асинхронного расчета
+    $reactStart = microtime(true); // Начало асинхронного расчета
 
     $loop = Factory::create();
     $calculator = new ReactiveDeliveryCalculator(
@@ -105,13 +105,14 @@ try {
 
     $loop->run();
 
-    //$reactEnd = microtime(true); // Конец асинхронного расчета
-    //$reactDuration = $reactEnd - $reactStart;
+    $reactEnd = microtime(true); // Конец асинхронного расчета
+    $reactDuration = $reactEnd - $reactStart;
 
     $_SESSION['success'] = sprintf(
         "Стоимость доставки: %.2f руб.",
         $deliveryCost
     );
+    $_SESSION['success'] = $_SESSION['success'] . " время: $reactDuration";
 } catch (Exception $e) {
     // Если произошла ошибка, записываем её в сессию
     $_SESSION['error'] = $e->getMessage();
